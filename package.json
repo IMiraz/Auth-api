@@ -1,0 +1,19 @@
+{
+  "name": "bookworm-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/IMiraz/Auth-api.git",
+  "author": "wasifmiraz <wasifmiraz@mail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- src/index.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
