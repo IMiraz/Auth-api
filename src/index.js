@@ -12,6 +12,30 @@ db.once('open', () => {
   console.log('mongoosed database connected')
 });
 
+const Schema = mongoose.Schema;
+const userSchema = new Schema({
+  name:{
+    type:String,
+    required:true,
+    // index:true,
+    minlength:3
+  },
+  email: {
+    type:String,
+    required:true,
+    minlength:5,
+    lowercase:true
+
+  },
+  password:  {
+    type:String,
+    required:true,
+    minlength:3,
+
+  }
+});
+
+const User = mongoose.model('User', userSchema);
 
 app.post("/api/auth", (req, res) => {
 
