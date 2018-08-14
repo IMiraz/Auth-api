@@ -7,12 +7,11 @@ router.post("/", (req, res) =>{
 const {credentials} = req.body;
 
  User.findOne({email: credentials.email}).then(user => {
-if(user) {
+if(user ) {
 
 }
 else {
   res.status(400).json({error:{global:"invalid credentials"}});
-
 }
  })
 
