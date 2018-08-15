@@ -3,10 +3,16 @@ import mongoose from 'mongoose';
 import path from 'path'
 import bodyParser from 'body-parser'
 import auth from './Routers/auth'
+import dotenv from 'dotenv'
+
+
 const app =express();
+
+dotenv.config()
+
 const db = mongoose.connection;
 
-mongoose.connect('mongodb://localhost:27017/loginUser', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 app.use(bodyParser.json());
 app.use("/api/auth", auth)
 
