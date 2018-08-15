@@ -4,12 +4,14 @@ import path from 'path'
 import bodyParser from 'body-parser'
 import auth from './Routers/auth'
 import dotenv from 'dotenv'
+import Promise from 'bluebird'
 
 
 const app =express();
 
-dotenv.config()
 
+dotenv.config()
+mongoose.Promise=Promise;
 const db = mongoose.connection;
 
 mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
