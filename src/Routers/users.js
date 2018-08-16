@@ -7,6 +7,7 @@ router.post("/", (req, res) =>{
 const {email, password} = req.body.user;
 const user = new User({ email});
 user.setPassword=(password)
+user.save();
 
 //  User.findOne({email: credentials.email}).then(user => {
 
