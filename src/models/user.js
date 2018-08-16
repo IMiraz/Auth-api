@@ -29,6 +29,12 @@ schema.methods.isValidPassword = function isValidPassword(password) {
       token:this.generateJWT()
     }
 
-  };
+  },
+  schema.methods.setPassword= function setPassword(password)
+ {
+   this.passwordHash=bcrypt.hashSync(password,10)
+
+ }
+
 
 export default mongoose.model('User',  schema);
